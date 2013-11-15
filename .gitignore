@@ -25,3 +25,4 @@ chromedriver.log
 bin/
 .env
 *.swp
+awesome_menus_phase_2.bmml
