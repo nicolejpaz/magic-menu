@@ -11,7 +11,7 @@ This challenge should meet 'most' of the :+1: [learning objectives](https://gith
 
 
 ## Summary 
-You will create a menu application based on [THIS MOCKUP](menus.png) and the releases below. Start from the skeleton code provided and submit a pull request with all releases completed.  **DO NOT MERGE YOUR PULL REQUEST TO MASTER** 
+You will create a menu application based on [THIS MOCKUP](menu.png) and the releases below. Start from the skeleton code provided and submit a pull request with all releases completed.  **DO NOT MERGE YOUR PULL REQUEST TO MASTER** 
 
 ## Releases
 
