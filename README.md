@@ -27,7 +27,7 @@ You will create a menu application based on [THIS MOCKUP](menu.png) and the rele
 * Test your model in IRB.  Verify that you can create Menus with correct information and see errors when you try to create Menus with incorrect input.
 * Create the first view you see in the [Mockup](menu.png) the Menu. (Don't worry about styling yet).
 * Implement _create_ and _read_ actions for your Menus
-* Use Rspec, Shoulda, and Capybara to test your Menu model, and integration.
+* Use Rspec, Shoulda, and Capybara to test your Menu model and integration.
 
 ### Release 2: Items
 
@@ -36,13 +36,13 @@ You will create a menu application based on [THIS MOCKUP](menu.png) and the rele
 * Test your Items data model using IRB.
 * Create the Items View
 * Implement _create_ and _read_ actions for your Items.
-* Use Rspec, Shoulda, and Capybara to test your Item model, and integration.
+* Use Rspec, Shoulda, and Capybara to test your Item model and integration.
 
 ### Release 3 : Items on Menus
 * Create a many-to-many relationship between items and menus.
 * Using IRB, test your data model.  Verify that you can assign Items to a Menu, view all Items on a Menu, and view all Menus that an Item is on.
 * Create the Items on Menus View (don't worry about styling yet).  In the Items on Menus View, the drop down should be filled with all possible items.
-* Use Rspec, Shoulda and Capybara to test your models and integration.
+* Use Rspec, Shoulda, and Capybara to test your models and integration.
 
 ### Release 4: AJAXify it.
 * Use AJAX to Implement Adding and Deleting items from menus on the Items on Menus View
@@ -57,14 +57,19 @@ You will create a menu application based on [THIS MOCKUP](menu.png) and the rele
 ### Release 6: CSS
 * Add CSS to make it beautiful.  (At the minimum it should look like the mockup).
 
-### Release 7: Add A Feature
-Choose **AT LEAST ONE** of more of the following features to add to your program.  Be sure to document in your README which one you choose.
+### Release 7: Refactor to beautiful code
+* Go through your entire app and make certain that each line is as clear, concise, and readable as you can make it.
 
-1. Add Users (with encrypted passwords)
-1. Add an API
-1. Add a Gem that YOU wrote
-1. Add Authentication (with Twitter or another service)
-1. Feature of your choice
+### Release 8: Add A Feature
+This feature is optional.
+
+Choose one or more of the following features to add to your program.  Be sure to document in your README which one you choose.
+
+1. Add Users with encrypted passwords.
+1. Add an API for an outside service.
+1. Add a Gem that YOU wrote.
+1. Add Authentication (with Twitter or another service).
+1. Feature of your choice.
 
 ## Helpful Resources
 * See the [resources file](https://github.com/fox-squirrels-2013/phase-2-guide/blob/master/resources.md) for our cohort.
