@@ -12,7 +12,7 @@ end
 #  because it's a better route
 get '/menus' do
 	@menus = Menu.all
-	erb :menus
+	erb :show_menus
 end
 
 # add a new menu
@@ -33,7 +33,7 @@ end
 #######################################
 get '/items' do
 	@items = Item.all
-	erb :items
+	erb :show_items
 end
 
 # add a new menu
@@ -55,7 +55,7 @@ end
 get '/menus/:id' do
 	@menu = Menu.find(params[:id])
 	@items = Item.all
-	erb :menu
+	erb :show_menu
 end
 
 post '/menus/:id' do
