@@ -7,6 +7,7 @@ get '/' do
 end
 
 post '/create/new' do
-  Menu.create name: params[:menu][:name]
+  @menu = Menu.create name: params[:menu][:name]
+  
   redirect '/'
 end
