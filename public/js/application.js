@@ -9,17 +9,38 @@ $(document).ready(function() {
   		data: $('#createMenu').serialize()
   	}).done(function(data){
   		if(data === 'false'){
-  			$('#fading').css("display","block")
-  			$('#fading').html('Your menu must have a title!')
+  			$('.fading').css("display","block")
+  			$('.fading').html('Your menu must have a title!')
   		}else{
-  			$('#fading').css("display","block")
-  			$('#fading').html('Added!')
-  			$('#fading').fadeOut(3000)
+  			$('.fading').css("display","block")
+  			$('.fading').html('Added!')
+  			$('.fading').fadeOut(3000)
 
   			$('#menus').prepend(data + "<br/>")	
+  			$('#createMenu')[0][0].value = ""
   		}
-  		
-  		
+  	})
+  })
+
+  $('#createItem').on('submit',function(e){
+  	e.preventDefault();
+  	debugger
+  	$.ajax({
+  		url: '/item/new',
+  		type: 'post',
+  		data: $('#createItem').serialize()
+  	}).done(function(data){
+  		if(data === 'false'){
+  			$('.fading').css("display","block")
+  			$('.fading').html('Your item must have a name!')
+  		}else{
+  			$('.fading').css("display","block")
+  			$('.fading').html('Added!')
+  			$('.fading').fadeOut(3000)
+
+  			$('#items').prepend(data + "<br/>")
+  			$('#createItem')[0][0].value = ""	
+  		}
   	})
   })
 

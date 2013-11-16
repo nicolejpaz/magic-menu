@@ -1,2 +1,12 @@
-<p id="menuDesc">All dat info on <%=@menu.name%></p>
+<h1 id="menuDesc">All dat info on <%=@menu.name%></h1>
+<form id="createItem">
+  <input type="input" placeholder="Enter a title!" name="itemTitle"><br/>
+  <input type="submit" value="Add an item to this menu!" name="createItemButton">
+</form>
+<p id="items">
+  <%Mitem.where(menu_id: @menu.id).reverse.each do |i| %>
+    <a href="/item/<%=i.id%>"><%=Item.find_by_id(i.item_id).name%></a><br />
+	<%end%>
+</p>
+<p class="fading"></p>
 	
