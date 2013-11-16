@@ -24,7 +24,7 @@ $(document).ready(function() {
 
   $('#createItem').on('submit',function(e){
   	e.preventDefault();
-  	debugger
+  	
   	$.ajax({
   		url: '/item/new',
   		type: 'post',
@@ -45,3 +45,5 @@ $(document).ready(function() {
   })
 
 });
+
+//WHEN USING JS TO ADD TO LIST, ALSO ADD THE ANCHOR TAG

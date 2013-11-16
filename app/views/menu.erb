@@ -1,9 +1,9 @@
 <h1 id="menuDesc">All dat info on <%=@menu.name%></h1>
 <form id="createItem">
-  <input type="input" placeholder="Enter a title!" name="itemTitle"><br/>
+  <input type="input" placeholder="Enter a title!" name="itemTitle" required><br/>
   <p id="choices">Check all menu's you would like to add to:<br />
   <%Menu.all.each do |menu|%>
-  	<input type="checkbox" name="menu" 
+  	<input type="checkbox" name="menu[]" 
   	<%if current_menu.id == menu.id%>
   		checked="checked" 
   	<%end%>
@@ -14,7 +14,7 @@
 </form>
 <p id="items">
   <%Mitem.where(menu_id: @menu.id).reverse.each do |i| %>
-    <a href="/item/<%=i.id%>"><%=Item.find_by_id(i.item_id).name%></a><br />
+    <a href="/item/<%=i.item_id%>"><%=Item.find_by_id(i.item_id).name%></a><br />
 	<%end%>
 </p>
 <p class="fading"></p>

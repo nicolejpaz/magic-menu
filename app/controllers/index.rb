@@ -23,9 +23,12 @@ get '/item/:id' do
 end
 
 post '/item/new' do
-	puts params
-	# item = Item.create name: params[:itemTitle] unless params[:itemTitle].empty?
-	# Mitem.create item_id: item.id, menu_id: current_menu.id unless params[:itemTitle].empty?
-	# return item.name if item
-	# return 'false'
+	item = Item.create name: params[:itemTitle] unless params[:itemTitle].empty?
+	unless params[:itemTitle].empty? 
+		params[:menu].each do |menu_id|
+	  Mitem.create item_id: item.id, menu_id: menu_id.to_i unless params[:menu].empty?
+		end
+	end	  
+	return item.name if item
+	return 'false'
 end	
