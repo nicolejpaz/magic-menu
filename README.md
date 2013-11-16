@@ -18,8 +18,9 @@ You will create a menu application based on [THIS MOCKUP](menu.png) and the rele
 ### Release Guidelines
 
 * Your app should be hosted on Heroku. Start by pushing up the basic skeleton. If you are unable to push to Heroku, move forward with the other releases until you can get help doing so.
-* Update the README in your GitHub repo to reflect your app.(ie - tell what it does)
-* Add a link to your Heroku app from your README
+* Once on Heroku, push every time you finish a release and verify that application is functional on the server.
+* Update the README in your GitHub repo to reflect your app's functionality (ie - tell what it does) every time you finish a release.
+* Add a link to your Heroku app from your README.
 
 ### Release 1 : Menus
 * Create a migration and model for menus.
@@ -48,7 +49,7 @@ You will create a menu application based on [THIS MOCKUP](menu.png) and the rele
 * Use AJAX to Implement Adding and Deleting items from menus on the Items on Menus View
 * Use AJAX to implement the "Add Item" button on the Items View.
 * Use AJAX to implement the "Add Menu" button on the Menus View
-* Verify existing tests still pass (hint : turn on JavaScript for your Capybara tests)
+* Verify existing tests still pass (hint: turn on JavaScript for your Capybara tests)
 
 ### Release 5: Errors
 * Use JavaScript and HTML 5 to validate your forms before submission.
@@ -61,7 +62,7 @@ You will create a menu application based on [THIS MOCKUP](menu.png) and the rele
 * Go through your entire app and make certain that each line is as clear, concise, and readable as you can make it.
 
 ### Release 8: Add A Feature
-This feature is optional.
+_This feature is optional._
 
 Choose one or more of the following features to add to your program.  Be sure to document in your README which one you choose.
 
