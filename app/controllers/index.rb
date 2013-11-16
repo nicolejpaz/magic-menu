@@ -22,6 +22,11 @@ post '/menus' do
 	redirect '/menus'
 end
 
+# added this route to delete menus
+delete '/menus' do
+	@menu = Menu.find(params[:id]).delete
+	redirect '/menus'
+end
 
 #######################################
 # ITEMS
@@ -38,6 +43,11 @@ post '/items' do
 	redirect '/items'
 end
 
+# added this route to delete items
+delete '/items' do
+	@item = Item.find(params[:id]).delete
+	redirect '/items'
+end
 
 #######################################
 # MENUS and ITEMS
@@ -55,3 +65,7 @@ post '/menus/:id' do
 	redirect "/menus/#{params[:id]}"
 end
 
+delete '/menus/:id' do
+	@menu = Menu.find(params[:id])
+	# expecting params[:item_id] to delete association
+end
