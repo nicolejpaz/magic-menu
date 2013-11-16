@@ -23,9 +23,9 @@ You will create a menu application based on [THIS MOCKUP](menu.png) and the rele
 * Add a link to your Heroku app from your README.
 
 ### Release 1 : Menus
-* Create a migration and model for menus.
+* Create a migration and model for Menus.
 * Add validations.
-* Test your model in IRB.  Verify that you can create Menus with correct information and see errors when you try to create Menus with incorrect input.
+* Test your model in IRB.  Verify that you can create Menus with correct information and get errors when you try to create a Menu with invalid input.
 * Create the first view you see in the [Mockup](menu.png) the Menu. (Don't worry about styling yet).
 * Implement _create_ and _read_ actions for your Menus
 * Use Rspec, Shoulda, and Capybara to test your Menu model and integration.
@@ -41,7 +41,7 @@ You will create a menu application based on [THIS MOCKUP](menu.png) and the rele
 
 ### Release 3 : Items on Menus
 * Create a many-to-many relationship between items and menus.
-* Using IRB, test your data model.  Verify that you can assign Items to a Menu, view all Items on a Menu, and view all Menus that an Item is on.
+* Using IRB, test your data model.  Verify that you can assign Items to a Menu; and then, see all the Items that belong to a given Menu; and given an Item, see all the Menus that Item is on.
 * Create the Items on Menus View (don't worry about styling yet).  In the Items on Menus View, the drop down should be filled with all possible items.
 * Use Rspec, Shoulda, and Capybara to test your models and integration.
 
