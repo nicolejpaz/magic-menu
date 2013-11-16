@@ -1,8 +1,4 @@
-Status:
-
-Running on Heroku: http://dry-crag-1246.herokuapp.com/
-Migrations, items and menus
-Models, items and menus
+up on vanessamenu.herokuapp.com
 
 
 
