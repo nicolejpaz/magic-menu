@@ -1,3 +1,14 @@
 <div class="container">
   
+  <h1 id="indexTitle"> Welcome to Awesome Menus </h1>
+  <form id="createMenu">
+    <input type="input" placeholder="Enter a title!" name="menuTitle"><br/>
+    <input type="submit" value="Create a new menu!" name="createMenuButton">
+  </form>
+  <p id="menus">
+    <%Menu.all.reverse.each do |m| %>
+      <a href="/menu/<%=m.id%>"><%=m.name%></a><br />
+    <%end%>
+  </p>
+  <p id="fading"></p>
 </div>
