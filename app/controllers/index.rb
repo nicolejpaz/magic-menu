@@ -67,5 +67,6 @@ end
 
 delete '/menus/:id' do
 	@menu = Menu.find(params[:id])
-	# expecting params[:item_id] to delete association
+	@menu.items.delete(Item.find(params[:item_id]))
+	redirect "/menus/#{params[:id]}"
 end
