@@ -14,7 +14,7 @@ $(document).ready(function() {
 
 	$("#create_menu").on("click", function(){
 		var menu_name = $("#menu_name").val()
-		$("#menu_list").append("<a>"+menu_name+"</a>")
+		$("#menu_list").append("<a>* "+menu_name+"</a>")
 	})
 
 });

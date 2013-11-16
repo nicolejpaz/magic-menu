@@ -1,21 +1,34 @@
 require 'json'
 
 get '/' do
-  # Look in app/views/index.erb
-  erb :index
+  redirect '/menu'
 end
 
-post '/menu_create' do
+get '/menu' do
+	erb :index
+end
+
+get '/item' do
+	erb :item
+end
+
+post '/menu/create' do
 	Menu.create(params[:menu])
-	@menu_obj = {:name => params[:menu][:name]}
+	# @menu_obj = {:name => params[:menu][:name]}
 
 
 	#AJAX return below:
 	# erb :_menu , :layout => false
+	redirect '/menu'
+end
+
+post '/item/create' do
+	Item.create(params[:item])
+	redirect '/item'
 end
 
 
-
+###DB name = maginmenu_development
 
 ###RELEASE 1
 # Create a migration and model for Menus. - DONE
@@ -26,9 +39,9 @@ end
 # Use Rspec, Shoulda, and Capybara to test your Menu model and integration.
 
 ###RELEASE 2
-# Create the migrations and models necessary for Items.
-# Add validations.
-# Test your Items data model using IRB.
-# Create the Items View
-# Implement create and read actions for your Items.
+# Create the migrations and models necessary for Items. - DONE
+# Add validations. - Price verification not working!
+# Test your Items data model using IRB. - Not sure how to. 
+# Create the Items View - DONE
+# Implement create and read actions for your Items. - DONE
 # Use Rspec, Shoulda, and Capybara to test your Item model and integration.
