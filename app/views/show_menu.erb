@@ -1,0 +1,13 @@
+<h3><%= @menu.name %> Menu </h3>
+<div class="menu-items"> Items </div>
+ <% @menu.items.each do |item| %>
+ <div class="menu-item">
+ 	<span class="btn-delete"><a href="#" onclick="alert('deleting...');">[x]</a></span>
+ 	<span class="item"><%= item.name %></span>
+ </div>
+ <% end %>
+
+<!-- ###Menu items -->
+
+<div class="all-items">
+<!-- ### Whole list of items -->
