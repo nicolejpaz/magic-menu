@@ -23,9 +23,8 @@ $(document).ready(function() {
       type: 'POST',
       data: form_data
     }).done(function(server_data) {
-      var parsed_data = $.parseJSON(server_data)
-
-      if (parsed_data["name"]) {
+      if (server_data === '{"name":["Name can\'t be blank"]}') {
+        var parsed_data = $.parseJSON(server_data)
         $('span.error').html(parsed_data["name"])
       } else {
         $('div#menus').html('').html(server_data)
@@ -45,14 +44,16 @@ $(document).ready(function() {
       type: 'POST',
       data: form_data
     }).done(function(server_data) {
-      var parsed_data = $.parseJSON(server_data)
-      
-      if (parsed_data["name"] && parsed_data["price"]) {
-        $('span.error').html(parsed_data["name"] + ' ' + parsed_data["price"])
-      } else if (parsed_data["name"]) {
-        $('span.error').html(parsed_data["name"])
-      } else if (parsed_data["price"]) {
-        $('span.error').html(parsed_data["price"])
+      console.log(server_data)
+      if (server_data === '{"name":["Item names need to exist"],"price":["Items need prices"]}' || server_data === '{"name":["Item names need to exist"]}' || server_data === '{"price":["Items need prices"]}') {
+        var parsed_data = $.parseJSON(server_data)
+
+        if (parsed_data["name"]) {
+          $('span.error').append(parsed_data["name"])
+        }
+        if (parsed_data["price"]) {
+          $('span.error').append(parsed_data["price"])
+        }
       } else {
         $('div#items').html('').html(server_data)
       }

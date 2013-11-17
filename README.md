@@ -2,6 +2,8 @@
 
 ## Nicole's Heroku link: [Nicole Magic!](http://nicole-magic.herokuapp.com/)
 
+Heroku stopped working at release 5.
+
 1. [Learning Objectives](#learning-objectives)
 1. [Summary](#summary)
 1. [Releases](#releases)
