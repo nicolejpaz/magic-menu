@@ -2,13 +2,18 @@ require 'spec_helper'
 
 describe Menu do
   describe "create" do
-    it "creates a new menu with valid information" do
+    before :each do
       @menu = Menu.create name: "second breakfast"
+    end
+
+    it "creates a new menu with valid information" do
       @menu.should be_an_instance_of Menu
     end
   end
 
   it { should have_many :items }
+
+  it { should validate_uniqueness_of :name }
 end
 
 describe Item do
@@ -16,7 +21,6 @@ describe Item do
     before :each do
       @menu = Menu.create name: "snack"
       @item = Item.create name: "chips", price: "1.99"
-      @item.menu_id = @menu.id
     end
 
     it "adds an item" do
@@ -24,5 +28,7 @@ describe Item do
     end
   end
 
-  it { should belong_to :menu }
+  it { should have_many :menus }
+  
+  it { should validate_uniqueness_of :name }
 end

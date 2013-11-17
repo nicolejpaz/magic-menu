@@ -3,7 +3,6 @@ class Items < ActiveRecord::Migration
     create_table :items do |t|
       t.string     :name
       t.string     :price
-      t.belongs_to :menu
 
       t.timestamps
     end
