@@ -8,7 +8,7 @@ body {
 }
 
 header {
-  background: #ccc;
+  background: #999;
   padding: 5px;
   box-shadow: 2px 2px 2px #666;
   margin-bottom: 20px;
@@ -18,6 +18,11 @@ header h1 a {
   color: white;
   text-shadow: -1px -1px 2px #374683;
   font-size: 50px;
+}
+
+header a {
+  color: #5ec4dc;
+  text-shadow: 2px 2px 2px #666;
 }
 
 header ul {
@@ -67,4 +72,21 @@ input {
 
 #items_in_menu {
   padding: 5px 0;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+tr:first-child {
+  font-size: 25px;
+}
+
+td {
+  padding: 5px 0;
+  width: 100px;
+}
+
+td.item_name {
+  font-size: 20px;
 }

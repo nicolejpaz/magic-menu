@@ -1,4 +1,4 @@
-<% if @items %>
+<% if @all_items %>
   <table>
     <tr>
       <td>Name</td>
@@ -7,7 +7,7 @@
 
     <% @all_items.each do |item| %>
       <tr>
-        <td><%= item.name %></td>
+        <td class="item_name"><%= item.name %></td>
         <td>$<%= item.price %></td>
       </tr>
     <% end %>
