@@ -2,12 +2,12 @@
   <header>
     <h1>Welcome to Awesome Menus</h1>
     <ul>
-      <li><a href="#">Add Items</a></li>
-      <li><a href="#">Add Menus</a></li>
+      <li><a href="/items">Add Items</a></li>
+      <li><a href="/">Add Menus</a></li>
     </ul>
   </header>
 
-  <form id="add_menu" action="/menu/create/new" method="post">
+  <form id="add_menu" action="/menus/create/new" method="post">
     <input type="text" placeholder="menu name" name="menu[name]">
     <input type="submit" value="Add Menu">
   </form>
@@ -16,7 +16,7 @@
   <% if @menus %>
     <ul>
       <% @menus.each do |menu| %>
-        <li><a href="/menu/<%= menu.id %>"><%= menu.name %></a></li>
+        <li><a href="/menus/<%= menu.id %>"><%= menu.name %></a></li>
       <% end %>
     </ul>
   <% else %>
