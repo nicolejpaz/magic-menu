@@ -12,6 +12,12 @@
     <input type="text" placeholder="price" name="item[price]">
 
     <input type="submit" value="Add Item">
+    <span class="error"></span>
+    <% if @errors_exist %>
+      <% @all_errors.each do |error| %>
+        <%= error %>
+      <% end %>
+    <% end %>
   </form>
 
   <h2>Your Items:</h2>

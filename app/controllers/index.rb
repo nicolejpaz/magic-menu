@@ -10,8 +10,12 @@ post '/menus/create/new' do
   @menu = Menu.create name: params[:menu][:name]
 
   @menus = Menu.all
-  
-  erb :_menu_items, layout: false
+
+  if @menu.errors.messages != {}
+    {name: @menu.errors[:name]}.to_json
+  else
+    erb :_menu_items, layout: false
+  end
 end
 
 get '/menus/:id' do
@@ -37,7 +41,11 @@ post '/item/create/new' do
 
   @items = Item.all
 
-  erb :_items_list, layout: false
+  if @item.errors.messages != {}
+    {name: @item.errors[:name], price: @item.errors[:price]}.to_json
+  else
+    erb :_items_list, layout: false
+  end
 end
 
 put '/menus/:id/update' do

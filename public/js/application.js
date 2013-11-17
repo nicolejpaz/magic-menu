@@ -1,4 +1,18 @@
 $(document).ready(function() {
+  $('form#add_menu input:nth-child(2)').on('click', function() {
+    if ($(this).prev().val() === '') {
+      $(this).after("<span class='error'>Name can't be blank</span>")
+    }
+  })
+  $('form#add_item input:nth-child(3)').on('click', function() {
+    var price = $(this).prev()
+    var name = price.prev()
+
+    if (price.val() === '' || name.val() === '') {
+      $(this).after("<span class='error'>Name and price can't be blank</span>")
+    }
+  })
+  
   $('form#add_menu').on('submit', function(event) {
     event.preventDefault()
 
@@ -9,7 +23,13 @@ $(document).ready(function() {
       type: 'POST',
       data: form_data
     }).done(function(server_data) {
-      $('div#menus').html('').html(server_data)
+      var parsed_data = $.parseJSON(server_data)
+
+      if (parsed_data["name"]) {
+        $('span.error').html(parsed_data["name"])
+      } else {
+        $('div#menus').html('').html(server_data)
+      }
     }).fail(function() {
       console.log('failed')
     })
@@ -25,7 +45,17 @@ $(document).ready(function() {
       type: 'POST',
       data: form_data
     }).done(function(server_data) {
-      $('div#items').html('').html(server_data)
+      var parsed_data = $.parseJSON(server_data)
+      
+      if (parsed_data["name"] && parsed_data["price"]) {
+        $('span.error').html(parsed_data["name"] + ' ' + parsed_data["price"])
+      } else if (parsed_data["name"]) {
+        $('span.error').html(parsed_data["name"])
+      } else if (parsed_data["price"]) {
+        $('span.error').html(parsed_data["price"])
+      } else {
+        $('div#items').html('').html(server_data)
+      }
     }).fail(function() {
       console.log('failed')
     })
