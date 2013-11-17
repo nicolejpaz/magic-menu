@@ -33,7 +33,9 @@ end
 post '/item/create/new' do
   @item = Item.create(name: params[:item][:name], price: params[:item][:price])
 
-  redirect '/items'
+  @items = Item.all
+
+  erb :_items_list, layout: false
 end
 
 put '/menus/:id/update' do

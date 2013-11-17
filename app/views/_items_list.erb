@@ -1,0 +1,15 @@
+<% if @items %>
+  <table>
+    <tr>
+      <td>Name</td>
+      <td>Price</td>
+    </tr>
+
+    <% @items.each do |item| %>
+      <tr>
+        <td><%= item.name %></td>
+        <td>$<%= item.price %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
