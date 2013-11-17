@@ -14,12 +14,12 @@
 
   <h2>Your Menus:</h2>
   <% if @menus %>
-    <ul>
-      <% @menus.each do |menu| %>
-        <li><a href="/menus/<%= menu.id %>"><%= menu.name %></a></li>
-      <% end %>
-    </ul>
+    <div id="menus">
+      <%= erb :_menu_items %>
+    </div>
   <% else %>
     <p>Your kitchen is gathering dust. Add something above.</p>
   <% end %>
+  <div class="test">
+  </div>
 </div>

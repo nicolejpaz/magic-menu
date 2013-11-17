@@ -8,8 +8,10 @@ end
 
 post '/menus/create/new' do
   @menu = Menu.create name: params[:menu][:name]
+
+  @menus = Menu.all
   
-  redirect '/'
+  erb :_menu_items, layout: false
 end
 
 get '/menus/:id' do
@@ -34,7 +36,7 @@ post '/item/create/new' do
   redirect '/items'
 end
 
-put '/menus/:id/add' do
+put '/menus/:id/update' do
   @add_item = params[:add_item]
 
   @menu = Menu.find(params[:id])
@@ -43,4 +45,8 @@ put '/menus/:id/add' do
   @menu.items << @item
 
   redirect '/menus/' + params[:id]
+end
+
+delete '/item/:id/delete' do
+  Item.find(params[:id]).destroy
 end
