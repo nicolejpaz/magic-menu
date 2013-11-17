@@ -19,6 +19,8 @@ get '/menus/:id' do
   @list_at_menu = List.where menu_id: @id
   @items_at_menu = @list_at_menu.map { |list| Item.find list.item_id }
 
+  @menu_name = Menu.find(@id).name.capitalize
+
   @items = Item.all
 
   erb :menu
@@ -46,9 +48,14 @@ put '/menus/:id/update' do
 
   @menu.items << @item
 
-  redirect '/menus/' + params[:id]
+  @list_at_menu = List.where menu_id: params[:id]
+  @items_at_menu = @list_at_menu.map { |list| Item.find list.item_id }
+
+  erb :_items_in_menu, layout: false
 end
 
 delete '/item/:id/delete' do
   Item.find(params[:id]).destroy
+
+  erb :_items_in_menu, layout: false
 end
