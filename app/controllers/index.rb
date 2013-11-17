@@ -31,7 +31,7 @@ get '/menus/:id' do
 end
 
 get '/items' do
-  @items = Item.all
+  @all_items = Item.all
 
   erb :item
 end
@@ -39,7 +39,7 @@ end
 post '/item/create/new' do
   @item = Item.create(name: params[:item][:name], price: params[:item][:price])
 
-  @items = Item.all
+  @all_items = Item.all
 
   if @item.errors.messages != {}
     {name: @item.errors[:name], price: @item.errors[:price]}.to_json

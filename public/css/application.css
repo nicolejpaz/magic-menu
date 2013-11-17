@@ -14,16 +14,22 @@ header {
   margin-bottom: 20px;
 }
 
+header h1 a {
+  color: white;
+  text-shadow: -1px -1px 2px #374683;
+  font-size: 50px;
+}
+
 header ul {
   position: absolute;
-  top: 10px;
+  top: 25px;
   right: 40px;
 }
 
 header ul li {
   display: inline;
   padding: 2px;
-  font-size: 20px;
+  font-size: 25px;
 }
 
 a {
@@ -44,4 +50,21 @@ input {
   width: 200px;
   display: block;
   margin: 10px;
+}
+
+.error {
+  color: red;
+}
+
+.item_name, .item_price {
+  display: inline-block;
+  width: 50px;
+}
+
+.item_price {
+  margin-left: 20px;
+}
+
+#items_in_menu {
+  padding: 5px 0;
 }
