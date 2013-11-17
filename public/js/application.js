@@ -31,16 +31,14 @@ $(document).ready(function() {
     })
   })
 
-  $('form#update_menu_item_list').on('submit', function(event) {
-    event.preventDefault()
-
+  $('select#update_menu_item_list').on('change', function() {
     var menu_id = $(this).attr('data-id')
-    var form_data = $(this).serialize()
+    var data = $(this).serialize()
 
     $.ajax({
       url: '/menus/' + menu_id + '/update',
       type: 'PUT',
-      data: form_data
+      data: data
     }).done(function(server_data) {
       $('div#items_in_menu').html('').html(server_data)
     }).fail(function() {

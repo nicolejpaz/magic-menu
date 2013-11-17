@@ -13,14 +13,10 @@
     <%= erb :_items_in_menu %>
   </div>
 
-  <form id="update_menu_item_list" data-id="<%= @id %>" method="post" action="/menus/<%= @id %>/update">
-    <input type="hidden" name="_method" value="put">
-    <select name="add_item">
-      <option>Menu Items</option>
-      <% @items.each do |item| %>
-        <option value="<%= item.id %>"><%= item.name %> - $<%= item.price %></option>
-      <% end %>
-    </select>
-    <input type="submit" value="Submit">
-  </form>
+  <select id="update_menu_item_list" data-id="<%= @id %>" name="add_item">
+    <option>Menu Items</option>
+    <% @items.each do |item| %>
+      <option value="<%= item.id %>"><%= item.name %> - $<%= item.price %></option>
+    <% end %>
+  </select>
 </div>
